@@ -5,7 +5,6 @@ import path  from "path";
 import fs  from 'fs/promises';
 import renderToString from "preact-render-to-string";
 import App from "./src/App";
-import { server } from "typescript";
 import { type Options, IrcClient } from "twitchts";
 
 const option: Options = {
