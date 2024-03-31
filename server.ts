@@ -28,12 +28,6 @@ const option: Options = {
   testWebsocket: false
 }
 
-declare global {
-  var messages: {user: string, message:string}[]
-}
-
-globalThis.messages = [];
-
 const http_service = http.createServer();
 const app = express();
 const wss =new ws.Server({server: http_service, 'clientTracking': true})
