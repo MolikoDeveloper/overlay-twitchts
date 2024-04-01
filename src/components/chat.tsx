@@ -38,6 +38,7 @@ const Chat = () => {
       <style>{css}</style>
       <div class="chat">
       </div>
+      <script type="module" src="/client.js"></script>
     </>
   )
 };

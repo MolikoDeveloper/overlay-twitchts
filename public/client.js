@@ -1,5 +1,12 @@
-globalThis.socket = new WebSocket('ws://localhost:8080');
-    
+const currentUrl = window.location.href;
+const timeParam = new URL(currentUrl).searchParams.get("time");
+const channelParam = new URL(currentUrl).searchParams.get("channel");
+
+globalThis.socket = new WebSocket(`ws://localhost:8080?channel=${channelParam}`);
+
+const time = timeParam? timeParam : 10;
+console.log(time)
+
 var messageBody = document.querySelector('.chat');
 messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
 
@@ -34,7 +41,7 @@ socket.addEventListener('message', function (event) {
 
         setTimeout(function() {
             newMessage.remove();
-        }, 8000);
+        }, Number(time) * 1000);
     }
 });
 
