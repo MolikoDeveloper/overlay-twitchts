@@ -47,9 +47,12 @@ app.use('*', async (req, res, next) => {
 app.get('*', async (req, res) => {
   try {
     if (req.url.includes('/?channel=')) {
-      setTimeout(() => {
-      chat.JoinChannel(req.url.replace('/?channel=', ''))
-      }, 3000)
+      let channel = new URL(`http://0.0.0.0${req.url}`).searchParams.get('channel');
+      if(channel){
+        setTimeout(() => {
+          chat.JoinChannel(channel!)
+        }, 3000)
+      }      
     }
     const mainHTML = (await fs.readFile('./index.html', 'utf-8'));
 
