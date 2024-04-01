@@ -33,7 +33,6 @@ const app = express();
 const wss =new ws.Server({server: http_service, 'clientTracking': true})
 const chat = new IrcClient(option);
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('*', async (req, res, next) => {
