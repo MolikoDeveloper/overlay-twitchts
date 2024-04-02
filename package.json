@@ -2,9 +2,8 @@
   "name": "overlay",
   "module": "server.ts",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "dependencies": {
-    "express": "^4.19.2",
     "preact": "^10.20.1",
     "preact-render-to-string": "^6.4.1",
     "preact-router": "^4.1.2",
@@ -12,7 +11,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/express": "^4.17.21"
+    "twitchts": "../twitch-ts"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
