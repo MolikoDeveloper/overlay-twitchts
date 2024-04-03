@@ -21,6 +21,7 @@
     margin-top: 10px;
     overflow-wrap: pretty;
     padding-bottom: 5px;
+    font-family: "Inter","Roobert","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .user {
@@ -30,4 +31,12 @@
 
 .message {
     text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.emote{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    position: relative;
+    vertical-align: middle;
+    transform: scale(1.3);
 }

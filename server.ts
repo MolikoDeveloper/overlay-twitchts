@@ -20,7 +20,8 @@ const mimeTypes = {
     '.eot': 'application/vnd.ms-fontobject',
     '.otf': 'application/font-otf',
     '.wasm': 'application/wasm',
-    '.ico': 'image/x-icon'
+    '.ico': 'image/x-icon',
+    '.ogg': 'audio/ogg'
 };
 
 const option: Options = {
@@ -91,6 +92,7 @@ server.on('request', async (req, res) => {
 })
 
 wss.setMaxListeners(20);
+chat.setMaxListeners(20);
 wss.on('connection', function connection(ws) {
   ws.on('close', () => {
     chat.LeaveChannel(ws.url.replace('/?channel=', ''));  
@@ -99,7 +101,7 @@ wss.on('connection', function connection(ws) {
   chat.on('message', (channel, user, message, self) => {
     if (ws.url.replace('/?channel=', '').toLocaleLowerCase() === channel.toLocaleLowerCase())
       if (!user.source?.isbot)
-        ws.send(JSON.stringify({ user: user.tags?.["display-name"]!, message: message.replace(`\s+`, ''), color: user.tags?.color }))
+        ws.send(JSON.stringify({ user: user.tags?.["display-name"]!, message: message.replace(`\s+`, ''), color: user.tags?.color, emotes: user.tags?.emotes}))
   });
 
   ws.on('message', () => {

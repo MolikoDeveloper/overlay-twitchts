@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { Route, Router } from 'preact-router';
 import path from 'path';
 import fs from 'fs';
