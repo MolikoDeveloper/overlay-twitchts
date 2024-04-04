@@ -17,7 +17,7 @@
 }
 
 .newMessage {
-    display: block ruby;
+    display: inline-block;
     margin-top: 10px;
     overflow-wrap: pretty;
     padding-bottom: 5px;

@@ -10,7 +10,7 @@
     "twitchts": "MolikoDeveloper/twitchts"
   },
   "devDependencies": {
-    "@types/bun": "latest",
+    "@types/bun": "^1.0.12",
     "twitchts": "../twitch-ts"
   },
   "peerDependencies": {
